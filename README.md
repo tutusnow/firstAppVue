@@ -28,3 +28,13 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+项目功能模块如下 ：
+1、vuex
+2、this.$emit
+3、prop父子之间的传值
+4、components组件注册
+5、vue指令的练习
+6、接口请求的封装、接口请求
+7、vue-router使用
+8、element-ui使用
