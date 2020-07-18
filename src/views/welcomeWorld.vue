@@ -4,6 +4,8 @@
       欢迎进入赵广雪个人系统哈哈
       <el-button  type="primary" plain @click='goBack'>返回</el-button>
        <el-card>
+
+       {{message | capitalize  }}
       <el-table :data="tableDate" stripe size="small">
         <el-table-column prop="xh" label="序号" width="100" align="center"></el-table-column>
         <el-table-column prop="name" label="姓名" width="120"></el-table-column>
@@ -34,6 +36,7 @@
 // import {handleareaNum} from '../utils.js'; 
 import * as utils from '../utils.js';
 import commonTab from '@/components/commonTab';
+console.log('$route.params.id');
 export default {
   name: 'WelcomeWorld',
   components:{
@@ -42,6 +45,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App-----雪广赵',
+      message:'2020不一样的高考',
       tableDate:[],
        paginationData: {
         total: 0,
@@ -51,7 +55,16 @@ export default {
       // activeName:'second',
     }
   },
+  filters: {
+    capitalize(value){
+         console.log('value------',value);
+          if (!value) return ''
+          value = value.toString()
+          return value.charAt(0).toUpperCase() + value.slice(1)+"88888"
+    },
+  },
   methods: {
+   
     changeTab (data){
              console.log('data---------',data); // tabEvent直接接收子组件传递过来的数值
     },
@@ -95,6 +108,7 @@ export default {
   mounted() {
      this.getData();
      this.changeTab();
+       console.log('$route.params.id',this.$route);
   }
 }
 </script>

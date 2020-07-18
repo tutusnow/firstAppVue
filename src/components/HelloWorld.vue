@@ -8,11 +8,13 @@
 </template>
 <script>
 import * as utils from '../utils.js'
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App-----雪广赵'
+      msg: 'Welcome to Your Vue.js App-----雪广赵',
+      pid :'7788'
     }
   },
   methods: {
@@ -31,7 +33,7 @@ export default {
               // localStorage.userName = res.data.data.userName;
               // localStorage.userId = res.data.data.userId;
               localStorage.token = res.data.data.token;
-              this.$router.push('/welcome')
+              this.$router.push(`/welcome:${this.pid}`)
             });
     }
   },
@@ -41,6 +43,8 @@ export default {
     }
   },
   mounted() {
+  
+
   },
 }
 </script>
